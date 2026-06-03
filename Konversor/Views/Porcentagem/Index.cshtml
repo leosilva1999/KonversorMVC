@@ -1,8 +1,11 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@model PorcentagemPageViewModel
 
 <div class="text-center">
     <h1 class="display-4">Porcentagem</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+    <li class="border-top my-3"></li>
+
+    <partial name="Partials/_PercentOfPartial"
+        model="Model.PercentOf" />
+    
 </div>

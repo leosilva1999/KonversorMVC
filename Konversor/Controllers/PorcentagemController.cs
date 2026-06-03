@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Konversor.Services;
+using Konversor.ViewModels;
 
 namespace Konversor.Controllers
 {
@@ -11,15 +12,27 @@ namespace Konversor.Controllers
         {
             _porcentagemService = porcentagemService;
         }
+
+        [HttpGet]
         public IActionResult Index()
         {
-            return View();
-        }
-        public IActionResult PercentOf(double numberToCalc, double percent)
-        {
-            var percentOf = _porcentagemService.PercentOf(numberToCalc, percent);
 
-            return View(percentOf);
+            return View(new PorcentagemPageViewModel());
+        }
+
+        [HttpPost]
+        public IActionResult CalculatePercentOf(PercentOfViewModel vm)
+        {
+            if(!ModelState.IsValid)                
+                    return View("Index");
+                
+            vm.Result = _porcentagemService.PercentOf(vm.Value!.Value, vm.Percentage!.Value);
+
+            var pageVm = new PorcentagemPageViewModel { 
+                PercentOf = vm
+            };
+
+            return View("Index", pageVm);
         }
 
 

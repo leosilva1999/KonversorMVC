@@ -6,7 +6,7 @@
             if (numberToCalc < 0 || percent < 0 || percent > 100)
                 throw new Exception("Invalid input");
 
-            return ((percent * numberToCalc) / 100)/100;
+            return (percent / 100) * numberToCalc;
         }
     }
 }

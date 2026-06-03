@@ -1,0 +1,23 @@
+﻿@model Konversor.ViewModels.PercentOfViewModel
+
+<form asp-action="CalculatePercentOf" method="post">
+    <ul class="list-unstyled ps-0">
+        <p>
+            Quanto é
+            <div class="input-group">
+                <input asp-for="Percentage" class="form-control-sm" placeholder="--">
+                <span class="input-group-text">%</span>
+            </div>
+            de
+            <input asp-for="Value" class="form-control-sm" placeholder="--">
+        </p>
+        @if (Model.Result.HasValue)
+        {
+            <div class="alert alert-success mt-3">
+                Resultado:
+                <strong>@Model.Result</strong>
+            </div>
+        }
+        <button class="btn btn-primary">Calcular</button>
+    </ul>
+</form>
