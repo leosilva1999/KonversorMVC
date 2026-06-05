@@ -7,4 +7,8 @@
     <UserSecretsId>1bf1fc5a-7ff2-4af5-a921-585613ce75b1</UserSecretsId>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="ViewModels\PercentOfViewModel - Cópia.cs" />
+  </ItemGroup>
+
 </Project>

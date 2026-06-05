@@ -2,13 +2,13 @@
 
 namespace Konversor.ViewModels
 {
-    public class PercentOfViewModel
+    public class Num1IsPercentOfNum2ViewModel
     {
         [Required]
-        public double? Value { get; set; }
+        public double? Num1 { get; set; }
 
         [Required]
-        public double? Percentage { get; set; }
+        public double? Num2 { get; set; }
 
         public double? Result { get; set; }
 

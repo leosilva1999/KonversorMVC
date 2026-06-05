@@ -11,7 +11,5 @@ namespace Konversor.ViewModels
         public double? Percentage { get; set; }
 
         public double? Result { get; set; }
-
-        public string? Error { get; set; }
     }
 }

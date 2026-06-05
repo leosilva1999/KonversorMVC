@@ -1,21 +1,21 @@
-﻿@model Konversor.ViewModels.PercentOfViewModel
+﻿@model Konversor.ViewModels.Num1IsPercentOfNum2ViewModel
 
-<form asp-action="CalculatePercentOf" method="post">
+<form asp-action="CalculateNum1IsPercentOfNum2" method="post">
     <ul class="list-unstyled ps-0">
         <p>
-            Quanto é
+            O valor
             <div class="input-group">
-                <input asp-for="Percentage" class="form-control-sm" placeholder="--">
-                <span class="input-group-text">%</span>
+                <input asp-for="Num1" class="form-control-sm" placeholder="--">
             </div>
-            de
-            <input asp-for="Value" class="form-control-sm" placeholder="--">
+            é qual porcentagem de
+            <input asp-for="Num2" class="form-control-sm" placeholder="--">
+            ?
         </p>
         @if (Model.Result.HasValue)
         {
             <div class="alert alert-success mt-3">
                 Resultado:
-                <strong>@Model.Result</strong>
+                <strong>@Model.Result%</strong>
             </div>
         }
         @if (!string.IsNullOrEmpty(Model.Error))
