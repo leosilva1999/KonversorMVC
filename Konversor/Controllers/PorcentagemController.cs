@@ -92,6 +92,100 @@ namespace Konversor.Controllers
 
             return View("Index", pageVm);
         }
+        [HttpPost]
+        public IActionResult CalculateDecreasePercentOf(DecreasePercentageViewModel vm)
+        {
+            try
+            {
+                if (!ModelState.IsValid)
+                    return View("Index");
+
+                vm.Result = _porcentagemService.DecreasePercentage(vm.InitialValue!.Value, vm.FinalValue!.Value);
+
+
+            }
+            catch (Exception ex)
+            {
+                vm.Error = ex.Message;
+            }
+
+            var pageVm = new PorcentagemPageViewModel
+            {
+                DecreasePercentage = vm
+            };
+
+            return View("Index", pageVm);
+        }
+        [HttpPost]
+        public IActionResult CalculatePercentOfXOverY(PercentOfXOverYViewModel vm)
+        {
+            try
+            {
+                if (!ModelState.IsValid)
+                    return View("Index");
+
+                vm.Result = _porcentagemService.PercentOfXOverY(vm.ValueX!.Value, vm.ValueY!.Value);
+
+
+            }
+            catch (Exception ex)
+            {
+                vm.Error = ex.Message;
+            }
+
+            var pageVm = new PorcentagemPageViewModel
+            {
+                PercentOfXOverY = vm
+            };
+
+            return View("Index", pageVm);
+        }
+        public IActionResult CalculateIncreasePercentageOnValue(IncreasePercentageOnValueViewModel vm)
+        {
+            try
+            {
+                if (!ModelState.IsValid)
+                    return View("Index");
+
+                vm.Result = _porcentagemService.IncreasePercentageOnValue(vm.Value!.Value, vm.Percentage!.Value);
+
+
+            }
+            catch (Exception ex)
+            {
+                vm.Error = ex.Message;
+            }
+
+            var pageVm = new PorcentagemPageViewModel
+            {
+                IncreasePercentageOnValue = vm
+            };
+
+            return View("Index", pageVm);
+        }
+        public IActionResult CalculateDecreasePercentageOnValue(DecreasePercentageOnValueViewModel vm)
+        {
+            try
+            {
+                if (!ModelState.IsValid)
+                    return View("Index");
+
+                vm.Result = _porcentagemService.DecreasePercentageOnValue(vm.Value!.Value, vm.Percentage!.Value);
+
+
+            }
+            catch (Exception ex)
+            {
+                vm.Error = ex.Message;
+            }
+
+            var pageVm = new PorcentagemPageViewModel
+            {
+                DecreasePercentageOnValue = vm
+            };
+
+            return View("Index", pageVm);
+        }
 
 
     }

@@ -1,13 +1,13 @@
-﻿@model Konversor.ViewModels.IncreasePercentageViewModel
+﻿@model Konversor.ViewModels.PercentOfXOverYViewModel
 
-<form asp-action="CalculateIncreasePercentOf" method="post">
+<form asp-action="CalculatePercentOfXOverY" method="post">
     <ul class="list-unstyled ps-0">
         <p>
-            Um valor de
-                <input asp-for="InitialValue" class="form-control-sm" placeholder="--">
-            que AUMENTOU para
-            <input asp-for="FinalValue" class="form-control-sm" placeholder="--">
-            Qual foi o aumento percentual?
+            O valor
+                <input asp-for="ValueX" class="form-control-sm" placeholder="--">
+            sobre o valor
+                <input asp-for="ValueY" class="form-control-sm" placeholder="--">
+            é quantos por cento?
         </p>
         @if (Model.Result.HasValue)
         {

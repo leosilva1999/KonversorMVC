@@ -1,17 +1,41 @@
-﻿@model PorcentagemPageViewModel
+﻿@using Konversor.ViewModels
+@model PorcentagemPageViewModel
 
 <div class="text-center">
-    <h1 class="display-4">Porcentagem</h1>
+	<h1 class="display-4">Porcentagem</h1>
 
-    <li class="border-top my-3"></li>
+	<div class="partial-section">
+		<partial name="Partials/_PercentOfPartial"
+				 model="Model.PercentOf" />
+	</div>
 
-    <partial name="Partials/_PercentOfPartial"
-        model="Model.PercentOf" />
-    
-    <partial name="Partials/_Num1IsPercentOfNum2Partial"
-        model="Model.Num1IsPercentOfNum2" />
+	<div class="partial-section">
+	<partial name="Partials/_Num1IsPercentOfNum2Partial"
+			 model="Model.Num1IsPercentOfNum2" />
+	</div>
 
-    <partial name="Partials/_IncreasePercentageOfPartial"
-             model="Model.IncreasePercentage" />
-    
+	<div class="partial-section">
+	<partial name="Partials/_IncreasePercentageOfPartial"
+			 model="Model.IncreasePercentage" />
+	</div>
+
+	<div class="partial-section">
+	<partial name="Partials/_DecreasePercentageOfPartial"
+			 model="Model.DecreasePercentage" />
+	</div>
+
+	<div class="partial-section">
+	<partial name="Partials/_PercentOfXOverYPartial"
+			 model="Model.PercentOfXOverY" />
+	</div>
+
+	<div class="partial-section">
+		<partial name="Partials/_IncreasePercentageOnValuePartial"
+				 model="Model.IncreasePercentageOnValue" />
+	</div>
+
+	<div class="partial-section">
+		<partial name="Partials/_DecreasePercentageOnValuePartial"
+				 model="Model.DecreasePercentageOnValue" />
+	</div>
 </div>

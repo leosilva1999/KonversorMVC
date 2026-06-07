@@ -1,0 +1,31 @@
+﻿@model Konversor.ViewModels.DecreasePercentageOnValueViewModel
+
+<form asp-action="CalculateDecreasePercentageOnValue" method="post">
+    <ul class="list-unstyled ps-0">
+        <p>
+            Tenho um valor de
+                <input asp-for="Value" class="form-control-sm" placeholder="--">
+            e quero diminuir em
+            <div class="input-group">
+                <input asp-for="Percentage" class="form-control-sm" placeholder="--">
+                <span class="input-group-text">%</span>
+            </div>
+            Qual o resultado?
+        </p>
+        @if (Model.Result.HasValue)
+        {
+            <div class="alert alert-success mt-3">
+                Resultado:
+                <strong>@Model.Result</strong>
+            </div>
+        }
+        @if (!string.IsNullOrEmpty(Model.Error))
+        {
+            <div class="alert alert-success mt-3">
+                Erro:
+                <strong>@Model.Error</strong>
+            </div>
+        }
+        <button class="btn btn-primary">Calcular</button>
+    </ul>
+</form>

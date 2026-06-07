@@ -13,24 +13,11 @@ html {
   box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
-html {
-  position: relative;
-  min-height: 100%;
-}
-
+html,
 body {
-  margin-bottom: 60px;
+    min-height: 100vh;
 }
 
-main {
-    display: flex;
-    flex-wrap: nowrap;
-    height: 100vh;
-    height: -webkit-fill-available;
-    max-height: 100vh;
-    overflow-x: auto;
-    overflow-y: hidden;
-}
 
 .b-example-divider {
     flex-shrink: 0;
@@ -111,4 +98,10 @@ main {
 
 .lh-tight {
     line-height: 1.25;
+}
+
+.partial-section {
+    border-top: 3px solid #dee2e6;
+    margin-top: 2rem;
+    padding-top: 2rem;
 }

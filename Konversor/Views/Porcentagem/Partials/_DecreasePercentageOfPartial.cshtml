@@ -1,13 +1,15 @@
-﻿@model Konversor.ViewModels.IncreasePercentageViewModel
+﻿@model Konversor.ViewModels.DecreasePercentageViewModel
 
-<form asp-action="CalculateIncreasePercentOf" method="post">
+
+
+<form asp-action="CalculateDecreasePercentOf" method="post">
     <ul class="list-unstyled ps-0">
         <p>
             Um valor de
                 <input asp-for="InitialValue" class="form-control-sm" placeholder="--">
-            que AUMENTOU para
-            <input asp-for="FinalValue" class="form-control-sm" placeholder="--">
-            Qual foi o aumento percentual?
+            que DIMINUIU para
+                <input asp-for="FinalValue" class="form-control-sm" placeholder="--">
+            Qual foi a diminuição percentual?
         </p>
         @if (Model.Result.HasValue)
         {

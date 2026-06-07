@@ -11,5 +11,16 @@
         public IncreasePercentageViewModel IncreasePercentage { get; set; }
         = new();
 
+        public DecreasePercentageViewModel DecreasePercentage { get; set; }
+        = new();
+
+        public PercentOfXOverYViewModel PercentOfXOverY { get; set; }
+        = new();
+        public IncreasePercentageOnValueViewModel IncreasePercentageOnValue { get; set; }
+        = new();
+
+        public DecreasePercentageOnValueViewModel DecreasePercentageOnValue { get; set; }
+        = new();
+
     }
 }
