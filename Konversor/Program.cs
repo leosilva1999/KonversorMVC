@@ -6,6 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<IPorcentagemService, PorcentagemService>();
+builder.Services.AddScoped<IMmcService, MmcService>();
 
 var app = builder.Build();
 
