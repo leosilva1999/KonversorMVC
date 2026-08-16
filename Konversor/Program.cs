@@ -8,6 +8,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IPorcentagemService, PorcentagemService>();
 builder.Services.AddScoped<IMmcService, MmcService>();
 builder.Services.AddScoped<IMdcService, MdcService>();
+builder.Services.AddScoped<IRestoDivisaoService, RestoDivisaoService>();
 
 var app = builder.Build();
 
