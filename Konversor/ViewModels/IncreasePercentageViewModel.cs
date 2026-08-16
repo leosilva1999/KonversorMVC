@@ -5,10 +5,10 @@ namespace Konversor.ViewModels
     public class IncreasePercentageViewModel
     {
         [Required]
-        public double? InitialValue { get; set; }
+        public double? IncreaseInitialValue { get; set; }
 
         [Required]
-        public double? FinalValue { get; set; }
+        public double? IncreaseFinalValue { get; set; }
 
         public double? Result { get; set; }
 

@@ -18,7 +18,7 @@
         }
         public double IncreasePercentage(double initalValue, double finalValue)
         {
-            if (finalValue < 0 || initalValue < 0 || initalValue > finalValue)
+            if (finalValue < 0 || initalValue <= 0 || initalValue > finalValue)
                 throw new Exception("Entrada inválida!");
             
             return ((finalValue - initalValue) / initalValue) * 100;
@@ -26,7 +26,7 @@
 
         public double DecreasePercentage(double initalValue, double finalValue)
         {
-            if (finalValue < 0 || initalValue < 0 || initalValue < finalValue)
+            if (finalValue < 0 || initalValue <= 0 || initalValue < finalValue)
                 throw new Exception("Entrada inválida!");
             
             return ((finalValue - initalValue) / initalValue) * 100;
@@ -43,9 +43,10 @@
         {
             if (value < 0 || percentage < 0)
                 throw new Exception("Entrada inválida!");
-                
-            
-            return value * ((percentage / 100) + 1);
+
+            double valueToIncrease = (value / 100) * percentage;
+
+            return value + valueToIncrease;
         }
 
         public double DecreasePercentageOnValue(double value, double percentage)

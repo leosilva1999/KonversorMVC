@@ -1,28 +1,42 @@
 ﻿@model Konversor.ViewModels.DecreasePercentageViewModel
 
-
-
 <form asp-action="CalculateDecreasePercentOf" method="post">
     <ul class="list-unstyled ps-0">
-        <p>
-            Um valor de
-                <input asp-for="InitialValue" class="form-control-sm" placeholder="--">
-            que DIMINUIU para
-                <input asp-for="FinalValue" class="form-control-sm" placeholder="--">
-            Qual foi a diminuição percentual?
-        </p>
+        <div class="d-flex align-items-center justify-content-center gap-2 flex-wrap" style="margin-bottom:12px;">
+
+            <span>Um valor de</span>
+
+            <input asp-for="DecreaseInitialValue"
+                   class="form-control"
+                   style="width:120px;"
+                   placeholder="--">
+
+            <span>que DIMINUIU para</span>
+
+            <input asp-for="DecreaseFinalValue"
+                   class="form-control"
+                   style="width:120px;"
+                   placeholder="--">
+
+            <span>Qual foi a diminuição percentual?</span>
+
+        </div>
         @if (Model.Result.HasValue)
         {
-            <div class="alert alert-success mt-3">
-                Resultado:
-                <strong>@Model.Result%</strong>
+            <div class="d-flex align-items-center justify-content-center gap-2 flex-wrap">
+                <div class="alert alert-success mt-3" style="width:120px;">
+                    <span>Resultado:</span>
+                    <strong>@Model.Result%</strong>
+                </div>
             </div>
         }
         @if (!string.IsNullOrEmpty(Model.Error))
         {
-            <div class="alert alert-success mt-3">
-                Erro:
-                <strong>@Model.Error</strong>
+            <div class="d-flex align-items-center justify-content-center gap-2 flex-wrap">
+                <div class="alert alert-warning mt-3">
+                    <span>Erro:</span>
+                    <strong>@Model.Error</strong>
+                </div>
             </div>
         }
         <button class="btn btn-primary">Calcular</button>

@@ -2,25 +2,41 @@
 
 <form asp-action="CalculateNum1IsPercentOfNum2" method="post">
     <ul class="list-unstyled ps-0">
-        <p>
-            O valor
-                <input asp-for="Num1" class="form-control-sm" placeholder="--">
-            é qual porcentagem de
-            <input asp-for="Num2" class="form-control-sm" placeholder="--">
-            ?
-        </p>
+        <div class="d-flex align-items-center justify-content-center gap-2 flex-wrap" style="margin-bottom:12px;">
+
+            <span>O valor</span>
+
+            <input asp-for="Num1"
+                   class="form-control"
+                   style="width:120px;"
+                   placeholder="--">
+
+            <span>é qual porcentagem de</span>
+
+            <input asp-for="Num2"
+                   class="form-control"
+                   style="width:120px;"
+                   placeholder="--">
+
+            <span>?</span>
+
+        </div>
         @if (Model.Result.HasValue)
         {
-            <div class="alert alert-success mt-3">
-                Resultado:
-                <strong>@Model.Result%</strong>
+            <div class="d-flex align-items-center justify-content-center gap-2 flex-wrap">
+                <div class="alert alert-success mt-3" style="width:120px;">
+                    <span>Resultado:</span>
+                    <strong>@Model.Result%</strong>
+                </div>
             </div>
         }
         @if (!string.IsNullOrEmpty(Model.Error))
         {
-            <div class="alert alert-success mt-3">
-                Erro:
-                <strong>@Model.Error</strong>
+            <div class="d-flex align-items-center justify-content-center gap-2 flex-wrap">
+                <div class="alert alert-warning mt-3">
+                    <span>Erro:</span>
+                    <strong>@Model.Error</strong>
+                </div>
             </div>
         }
         <button class="btn btn-primary">Calcular</button>

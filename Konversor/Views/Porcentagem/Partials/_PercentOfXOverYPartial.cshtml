@@ -2,25 +2,41 @@
 
 <form asp-action="CalculatePercentOfXOverY" method="post">
     <ul class="list-unstyled ps-0">
-        <p>
-            O valor
-                <input asp-for="ValueX" class="form-control-sm" placeholder="--">
-            sobre o valor
-                <input asp-for="ValueY" class="form-control-sm" placeholder="--">
-            é quantos por cento?
-        </p>
+        <div class="d-flex align-items-center justify-content-center gap-2 flex-wrap" style="margin-bottom:12px;">
+
+            <span>O valor</span>
+
+            <input asp-for="ValueX"
+                   class="form-control"
+                   style="width:120px;"
+                   placeholder="--">
+
+            <span>sobre o valor</span>
+
+            <input asp-for="ValueY"
+                   class="form-control"
+                   style="width:120px;"
+                   placeholder="--">
+
+            <span>é quantos por cento?</span>
+
+        </div>
         @if (Model.Result.HasValue)
         {
-            <div class="alert alert-success mt-3">
-                Resultado:
-                <strong>@Model.Result%</strong>
+            <div class="d-flex align-items-center justify-content-center gap-2 flex-wrap">
+                <div class="alert alert-success mt-3" style="width:120px;">
+                    <span>Resultado:</span>
+                    <strong>@Model.Result%</strong>
+                </div>
             </div>
         }
         @if (!string.IsNullOrEmpty(Model.Error))
         {
-            <div class="alert alert-success mt-3">
-                Erro:
-                <strong>@Model.Error</strong>
+            <div class="d-flex align-items-center justify-content-center gap-2 flex-wrap">
+                <div class="alert alert-warning mt-3">
+                    <span>Erro:</span>
+                    <strong>@Model.Error</strong>
+                </div>
             </div>
         }
         <button class="btn btn-primary">Calcular</button>

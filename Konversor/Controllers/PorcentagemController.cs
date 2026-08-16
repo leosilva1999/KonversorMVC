@@ -25,10 +25,8 @@ namespace Konversor.Controllers
         {
             try
             {
-                if (!ModelState.IsValid)
-                    return View("Index");
-
-                vm.Result = _porcentagemService.PercentOf(vm.Value!.Value, vm.Percentage!.Value);
+                if (ModelState.IsValid)
+                    vm.Result = _porcentagemService.PercentOf(vm.Value!.Value, vm.Percentage!.Value);
             }
             catch (Exception ex)
             {
@@ -48,10 +46,8 @@ namespace Konversor.Controllers
         {
             try
             {
-                if (!ModelState.IsValid)
-                    return View("Index");
-
-                vm.Result = _porcentagemService.Num1IsPercentOfNum2(vm.Num1!.Value, vm.Num2!.Value);
+                if (ModelState.IsValid)
+                    vm.Result = _porcentagemService.Num1IsPercentOfNum2(vm.Num1!.Value, vm.Num2!.Value);
 
 
             }
@@ -73,10 +69,8 @@ namespace Konversor.Controllers
         {
             try
             {
-                if (!ModelState.IsValid)
-                    return View("Index");
-
-                vm.Result = _porcentagemService.IncreasePercentage(vm.InitialValue!.Value, vm.FinalValue!.Value);
+                if (ModelState.IsValid)
+                    vm.Result = _porcentagemService.IncreasePercentage(vm.IncreaseInitialValue!.Value, vm.IncreaseFinalValue!.Value);
 
 
             }
@@ -97,10 +91,8 @@ namespace Konversor.Controllers
         {
             try
             {
-                if (!ModelState.IsValid)
-                    return View("Index");
-
-                vm.Result = _porcentagemService.DecreasePercentage(vm.InitialValue!.Value, vm.FinalValue!.Value);
+                if (ModelState.IsValid)
+                    vm.Result = _porcentagemService.DecreasePercentage(vm.DecreaseInitialValue!.Value, vm.DecreaseFinalValue!.Value);
 
 
             }
@@ -121,10 +113,8 @@ namespace Konversor.Controllers
         {
             try
             {
-                if (!ModelState.IsValid)
-                    return View("Index");
-
-                vm.Result = _porcentagemService.PercentOfXOverY(vm.ValueX!.Value, vm.ValueY!.Value);
+                if (ModelState.IsValid)
+                    vm.Result = _porcentagemService.PercentOfXOverY(vm.ValueX!.Value, vm.ValueY!.Value);
 
 
             }
@@ -144,10 +134,8 @@ namespace Konversor.Controllers
         {
             try
             {
-                if (!ModelState.IsValid)
-                    return View("Index");
-
-                vm.Result = _porcentagemService.IncreasePercentageOnValue(vm.Value!.Value, vm.Percentage!.Value);
+                if (ModelState.IsValid)
+                    vm.Result = _porcentagemService.IncreasePercentageOnValue(vm.ValueToIncrease!.Value, vm.IncreasePercentage!.Value);
 
 
             }
@@ -167,10 +155,8 @@ namespace Konversor.Controllers
         {
             try
             {
-                if (!ModelState.IsValid)
-                    return View("Index");
-
-                vm.Result = _porcentagemService.DecreasePercentageOnValue(vm.Value!.Value, vm.Percentage!.Value);
+                if (ModelState.IsValid)
+                    vm.Result = _porcentagemService.DecreasePercentageOnValue(vm.ValueToDecrease!.Value, vm.DecreasePercentage!.Value);
 
 
             }
