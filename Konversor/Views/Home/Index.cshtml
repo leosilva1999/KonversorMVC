@@ -1,8 +1,47 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+@{
+    ViewData["Title"] = "Home";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Konversor</h1>
+    <p class="lead">
+        Uma coleção de calculadoras e conversores simples e rápidos, direto no navegador — sem cadastro e sem instalação.
+    </p>
+</div>
+
+<div class="partial-section">
+    <h2 class="h4 mb-3">Disponível agora</h2>
+    <div class="row row-cols-1 row-cols-md-2 g-3">
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h3 class="h5 card-title">Porcentagem</h3>
+                    <p class="card-text">Calcule porcentagens, aumentos, reduções e variações percentuais entre valores.</p>
+                    <a asp-controller="Porcentagem" asp-action="Index" class="btn btn-primary btn-sm">Abrir</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h3 class="h5 card-title">MMC</h3>
+                    <p class="card-text">Encontre o Mínimo Múltiplo Comum entre dois ou mais números.</p>
+                    <a asp-controller="Mmc" asp-action="Index" class="btn btn-primary btn-sm">Abrir</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="partial-section">
+    <h2 class="h4 mb-3">Em breve</h2>
+    <p class="text-muted">Novas calculadoras de matemática e computação, ainda em desenvolvimento:</p>
+    <ul class="list-inline mb-0">
+        <li class="list-inline-item"><span class="badge bg-light text-dark border">MDC</span></li>
+        <li class="list-inline-item"><span class="badge bg-light text-dark border">Resto da divisão</span></li>
+        <li class="list-inline-item"><span class="badge bg-light text-dark border">Endereços de rede</span></li>
+        <li class="list-inline-item"><span class="badge bg-light text-dark border">CPF</span></li>
+        <li class="list-inline-item"><span class="badge bg-light text-dark border">Inverter string</span></li>
+        <li class="list-inline-item"><span class="badge bg-light text-dark border">Codificar MD5</span></li>
+    </ul>
 </div>
